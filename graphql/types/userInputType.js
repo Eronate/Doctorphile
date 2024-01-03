@@ -19,7 +19,7 @@ const userInputType = new GraphQLInputObjectType({
             type: new GraphQLNonNull(GraphQLString),
         },
         address: {
-            type: new GraphQLNonNull(GraphQLString),
+            type: GraphQLString,
         },
         gender: {
             type: new GraphQLNonNull(GraphQLString),
