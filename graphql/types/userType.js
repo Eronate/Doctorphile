@@ -27,10 +27,7 @@ const UserType = new GraphQLObjectType({
       },
       gender: {
         type: GraphQLString,
-      },
-      created_at: {
-        type: GraphQLString,
-      },
+      }
     })
 });
 

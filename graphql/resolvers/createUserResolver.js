@@ -2,7 +2,7 @@ const db = require('../../models');
 
 const createUserResolver = async (_, { user }) => {
     const { first_name, last_name, password, 
-        email, address, gender, created_at } = user;
+        email, address, gender } = user;
     console.log(user)
     console.log(db.User)
     const newUser = await db.User.create({
@@ -11,8 +11,7 @@ const createUserResolver = async (_, { user }) => {
         password,
         email,
         address,
-        gender,
-        created_at,
+        gender
     });
   
     return newUser;

@@ -23,10 +23,7 @@ const userInputType = new GraphQLInputObjectType({
         },
         gender: {
             type: new GraphQLNonNull(GraphQLString),
-        },
-        created_at: {
-            type: new GraphQLNonNull(GraphQLString),
-        },
+        }
     }
 });
 
