@@ -1,19 +1,15 @@
-const { 
-    GraphQLBoolean,
-    GraphQLNonNull,
-    GraphQLID,
-} = require('graphql');
+const { GraphQLBoolean, GraphQLNonNull, GraphQLID } = require('graphql')
 
-const deleteUserResolver = require('../resolvers/deleteUserResolver');
+const deleteUserResolver = require('../resolvers/deleteUserResolver')
 
 const deleteUser = {
-    type: GraphQLBoolean,
-    args: {
-      id: {
-        type: new GraphQLNonNull(GraphQLID),
-      }
+  type: GraphQLBoolean,
+  args: {
+    id: {
+      type: new GraphQLNonNull(GraphQLID),
     },
-    resolve: deleteUserResolver,
+  },
+  resolve: deleteUserResolver,
 }
 
-module.exports = deleteUser;
+module.exports = deleteUser

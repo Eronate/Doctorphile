@@ -1,5 +1,5 @@
-const JWT_SECRET = 'tokenescu';
+const JWT_SECRET = 'tokenescu'
 
 module.exports = {
-    JWT_SECRET,
+  JWT_SECRET,
 }

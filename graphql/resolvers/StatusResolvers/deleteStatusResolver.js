@@ -1,21 +1,21 @@
-const db = require('../../../models');
+const db = require('../../../models')
 
 const deleteStatusResolver = async (_, args) => {
-    const { id } = args;
+  const { id } = args
 
-    const targetStatus = await db.Status.findByPk(id);
+  const targetStatus = await db.Status.findByPk(id)
 
-    if(!targetStatus) {
-      return null;
-    }
-
-    try {
-      await targetStatus.destroy();
-
-      return true;
-    } catch (e) {
-      throw new Error(e);
-    }
+  if (!targetStatus) {
+    return null
   }
 
-module.exports = deleteStatusResolver;
+  try {
+    await targetStatus.destroy()
+
+    return true
+  } catch (e) {
+    throw new Error(e)
+  }
+}
+
+module.exports = deleteStatusResolver

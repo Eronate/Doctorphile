@@ -1,23 +1,20 @@
-const { 
-    GraphQLNonNull,
-    GraphQLID,
-} = require('graphql');
+const { GraphQLNonNull, GraphQLID } = require('graphql')
 
-const updateSpecializationResolver = require('../resolvers/updateSpecializationResolver');
-const SpecializationType = require('../../types/specializationType');
-const specializationInputType = require('../../types/specializationInputType');
+const updateSpecializationResolver = require('../resolvers/updateSpecializationResolver')
+const SpecializationType = require('../../types/specializationType')
+const specializationInputType = require('../../types/InputTypes/specializationInputType')
 
 const updateSpecialization = {
-    type: SpecializationType,
-    args: {
-        id: {
-            type: new GraphQLNonNull(GraphQLID),
-        },
-        specialization: {
-            type: specializationInputType,
-        },
+  type: SpecializationType,
+  args: {
+    id: {
+      type: new GraphQLNonNull(GraphQLID),
     },
-    resolve: updateSpecializationResolver,
+    specialization: {
+      type: specializationInputType,
+    },
+  },
+  resolve: updateSpecializationResolver,
 }
 
-module.exports = updateSpecialization;
+module.exports = updateSpecialization

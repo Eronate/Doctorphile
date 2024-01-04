@@ -1,16 +1,14 @@
-const { 
-    GraphQLList
-} = require('graphql');
+const { GraphQLList } = require('graphql')
 
-const db = require('../../models');
+const db = require('../../models')
 
-const ClinicType = require('../types/clinicType');
+const ClinicType = require('../types/clinicType')
 
 const clinicsQuery = {
-    type: new GraphQLList(ClinicType),
-    resolve: (_, args, clinic) => {
-        return db.Clinic.findAll();
-    },
+  type: new GraphQLList(ClinicType),
+  resolve: (_, args) => {
+    return db.Clinic.findAll()
+  },
 }
 
-module.exports = clinicsQuery;
+module.exports = clinicsQuery

@@ -1,22 +1,19 @@
-const db = require('../../db');
+const db = require('../../db')
 
-const { 
-    GraphQLString,
-    GraphQLNonNull,
-} = require('graphql');
+const { GraphQLString, GraphQLNonNull } = require('graphql')
 
-const StatusType = require('../../types/statusType');
-const statusInputType = require('../../types/statusInputType');
-const createStatusResolver = require('../resolvers/createStatusResolver');
+const StatusType = require('../../types/statusType')
+const statusInputType = require('../../types/InputTypes/statusInputType')
+const createStatusResolver = require('../resolvers/createStatusResolver')
 
 const createStatus = {
-    type: StatusType,
-    args: {
-      status: {
-        type: statusInputType,
-      },
+  type: StatusType,
+  args: {
+    status: {
+      type: statusInputType,
     },
-    resolve: createStatusResolver,
+  },
+  resolve: createStatusResolver,
 }
 
-module.exports = createStatus;
+module.exports = createStatus

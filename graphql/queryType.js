@@ -1,12 +1,11 @@
-const db = require('./db');
+const db = require('./db')
 
-const { 
-    GraphQLObjectType, 
-    GraphQLList,
-    GraphQLNonNull,
-    GraphQLID,
-} = require('graphql');
-
+const {
+  GraphQLObjectType,
+  GraphQLList,
+  GraphQLNonNull,
+  GraphQLID,
+} = require('graphql')
 
 // const userQuery = require('./queries/user');
 // const usersQuery = require('./queries/users');
@@ -20,19 +19,21 @@ const {
 //       post: postQuery,
 //     }
 // })
-const usersQuery = require('./queries/users');
-const specializationQuery = require('./queries/specializations');
-const clinicsQuery = require('./queries/clinics');
-const statusesQuery = require('./queries/statuses');
+const usersQuery = require('./queries/users')
+const specializationQuery = require('./queries/specializations')
+const clinicsQuery = require('./queries/clinics')
+const statusesQuery = require('./queries/statuses')
+const doctorsQuery = require('./queries/doctors')
 
 const queryType = new GraphQLObjectType({
-    name: 'Query',
-    fields: {
-        users: usersQuery,
-        specializations: specializationQuery,
-        clinics: clinicsQuery,
-        statuses: statusesQuery,
-    }
+  name: 'Query',
+  fields: {
+    users: usersQuery,
+    specializations: specializationQuery,
+    clinics: clinicsQuery,
+    statuses: statusesQuery,
+    doctors: doctorsQuery,
+  },
 })
-    
-module.exports = queryType;
+
+module.exports = queryType

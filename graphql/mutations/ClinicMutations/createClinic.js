@@ -1,22 +1,19 @@
-const db = require('../../db');
+const db = require('../../db')
 
-const { 
-    GraphQLString,
-    GraphQLNonNull,
-} = require('graphql');
+const { GraphQLString, GraphQLNonNull } = require('graphql')
 
-const ClinicType = require('../../types/clinicType');
-const clinicInputType = require('../../types/clinicInputType');
-const createClinicResolver = require('../resolvers/createClinicResolver');
+const ClinicType = require('../../types/clinicType')
+const clinicInputType = require('../../types/InputTypes/clinicInputType')
+const createClinicResolver = require('../resolvers/createClinicResolver')
 
 const createClinic = {
-    type: ClinicType,
-    args: {
-      clinic: {
-        type: clinicInputType,
-      },
+  type: ClinicType,
+  args: {
+    clinic: {
+      type: clinicInputType,
     },
-    resolve: createClinicResolver,
+  },
+  resolve: createClinicResolver,
 }
 
-module.exports = createClinic;
+module.exports = createClinic

@@ -1,19 +1,19 @@
-const db = require('../../../models');
+const db = require('../../../models')
 
 const updateStatusResolver = async (_, args) => {
-    const { id, status } = args;
+  const { id, status } = args
 
-    const targetStatus = await db.Status.findByPk(id);
+  const targetStatus = await db.Status.findByPk(id)
 
-    if(!targetStatus) {
-      return null;
-    }
+  if (!targetStatus) {
+    return null
+  }
 
-    const updatedStatus = await targetStatus.update({
-      ...status,
-    });
+  const updatedStatus = await targetStatus.update({
+    ...status,
+  })
 
-    return updatedStatus;
+  return updatedStatus
 }
 
-module.exports = updateStatusResolver;
+module.exports = updateStatusResolver

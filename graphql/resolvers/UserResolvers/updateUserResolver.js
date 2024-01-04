@@ -1,19 +1,19 @@
-const db = require('../../../models');
+const db = require('../../../models')
 
 const updateUserResolver = async (_, args) => {
-    const { id, user } = args;
+  const { id, user } = args
 
-    const targetUser = await db.User.findByPk(id);
+  const targetUser = await db.User.findByPk(id)
 
-    if(!targetUser) {
-      return null;
-    }
+  if (!targetUser) {
+    return null
+  }
 
-    const updatedUser = await targetUser.update({
-      ...user,
-    });
+  const updatedUser = await targetUser.update({
+    ...user,
+  })
 
-    return updatedUser;
+  return updatedUser
 }
 
-module.exports = updateUserResolver;
+module.exports = updateUserResolver

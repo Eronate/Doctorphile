@@ -1,23 +1,20 @@
-const { 
-    GraphQLNonNull,
-    GraphQLID,
-} = require('graphql');
+const { GraphQLNonNull, GraphQLID } = require('graphql')
 
-const StatusType = require('../../types/statusType');
-const statusInputType = require('../../types/statusInputType');
-const updateStatusResolver = require('../resolvers/updateStatusResolver');
+const StatusType = require('../../types/statusType')
+const statusInputType = require('../../types/statusInputType')
+const updateStatusResolver = require('../resolvers/updateStatusResolver')
 
 const updateStatus = {
-    type: StatusType,
-    args: {
-        id: {
-            type: new GraphQLNonNull(GraphQLID),
-        },
-        status: {
-            type: statusInputType,
-        },
+  type: StatusType,
+  args: {
+    id: {
+      type: new GraphQLNonNull(GraphQLID),
     },
-    resolve: updateStatusResolver,
+    status: {
+      type: statusInputType,
+    },
+  },
+  resolve: updateStatusResolver,
 }
 
-module.exports = updateStatus;
+module.exports = updateStatus
