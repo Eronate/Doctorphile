@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.Doctor.belongsTo(models.User)
-      models.Doctor.hasMany(models.Appointment, { foreignKey: 'doctor_id' })
+      //models.Doctor.hasMany(models.Appointment, { foreignKey: 'doctor_id' })
       models.Doctor.belongsTo(models.Clinic)
       models.Doctor.belongsTo(models.Specialization)
     }

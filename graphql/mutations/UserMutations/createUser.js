@@ -2,7 +2,7 @@ const db = require('../../db')
 
 const { GraphQLString, GraphQLNonNull } = require('graphql')
 const UserType = require('../../types/userType')
-const createUserResolver = require('../resolvers/createUserResolver')
+const createUserResolver = require('../../resolvers/UserResolvers/createUserResolver')
 const userInputType = require('../../types/InputTypes/userInputType')
 
 const createUser = {

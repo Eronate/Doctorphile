@@ -1,6 +1,6 @@
 const { GraphQLBoolean, GraphQLNonNull, GraphQLID } = require('graphql')
 
-const deleteSpecializationResolver = require('../resolvers/deleteSpecializationResolver')
+const deleteSpecializationResolver = require('../../resolvers/SpecializationResolvers/deleteSpecializationResolver')
 
 const deleteSpecialization = {
   type: GraphQLBoolean,

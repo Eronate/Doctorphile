@@ -4,7 +4,7 @@ const { GraphQLString, GraphQLNonNull } = require('graphql')
 
 const StatusType = require('../../types/statusType')
 const statusInputType = require('../../types/InputTypes/statusInputType')
-const createStatusResolver = require('../resolvers/createStatusResolver')
+const createStatusResolver = require('../../resolvers/StatusResolvers/createStatusResolver')
 
 const createStatus = {
   type: StatusType,

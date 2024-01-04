@@ -4,7 +4,7 @@ const { GraphQLString, GraphQLNonNull } = require('graphql')
 
 const DoctorType = require('../../types/doctorType')
 const doctorInputType = require('../../types/InputTypes/doctorInputType')
-const createDoctorResolver = require('../resolvers/createDoctorResolver')
+const createDoctorResolver = require('../../resolvers/DoctorResolvers/createDoctorResolver')
 
 const createDoctor = {
   type: DoctorType,

@@ -2,7 +2,7 @@ const { GraphQLNonNull, GraphQLID } = require('graphql')
 
 const ClinicType = require('../../types/clinicType')
 const clinicInputType = require('../../types/InputTypes/clinicInputType')
-const updateClinicResolver = require('../resolvers/updateClinicResolver')
+const updateClinicResolver = require('../../resolvers/ClinicResolvers/updateClinicResolver')
 
 const updateClinic = {
   type: ClinicType,

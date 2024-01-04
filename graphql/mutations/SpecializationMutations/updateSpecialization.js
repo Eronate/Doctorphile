@@ -1,6 +1,6 @@
 const { GraphQLNonNull, GraphQLID } = require('graphql')
 
-const updateSpecializationResolver = require('../resolvers/updateSpecializationResolver')
+const updateSpecializationResolver = require('../../resolvers/SpecializationResolvers/updateSpecializationResolver')
 const SpecializationType = require('../../types/specializationType')
 const specializationInputType = require('../../types/InputTypes/specializationInputType')
 
