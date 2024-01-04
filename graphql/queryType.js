@@ -21,11 +21,17 @@ const {
 //     }
 // })
 const usersQuery = require('./queries/users');
+const specializationQuery = require('./queries/specializations');
+const clinicsQuery = require('./queries/clinics');
+const statusesQuery = require('./queries/statuses');
 
 const queryType = new GraphQLObjectType({
     name: 'Query',
     fields: {
         users: usersQuery,
+        specializations: specializationQuery,
+        clinics: clinicsQuery,
+        statuses: statusesQuery,
     }
 })
     
