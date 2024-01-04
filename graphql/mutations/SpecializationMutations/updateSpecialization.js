@@ -4,8 +4,8 @@ const {
 } = require('graphql');
 
 const updateSpecializationResolver = require('../resolvers/updateSpecializationResolver');
-const SpecializationType = require('../types/specializationType');
-const specializationInputType = require('../types/specializationInputType');
+const SpecializationType = require('../../types/specializationType');
+const specializationInputType = require('../../types/specializationInputType');
 
 const updateSpecialization = {
     type: SpecializationType,

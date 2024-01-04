@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const createSpecializationResolver = async (_, { specialization }) => {
     const { name } = specialization;

@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const createUserResolver = async (_, { user }) => {
     const { first_name, last_name, password, 

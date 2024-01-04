@@ -1,12 +1,12 @@
-const db = require('../db');
+const db = require('../../db');
 
 const { 
     GraphQLString,
     GraphQLNonNull,
 } = require('graphql');
-const SpecializationType = require('../types/specializationType');
+const SpecializationType = require('../../types/specializationType');
 const createSpecializationResolver = require('../resolvers/createSpecializationResolver');
-const specializationInputType = require('../types/specializationInputType');
+const specializationInputType = require('../../types/specializationInputType');
 
 const createSpecialization = {
     type: SpecializationType,

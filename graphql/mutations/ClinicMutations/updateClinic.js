@@ -3,8 +3,8 @@ const {
     GraphQLID,
 } = require('graphql');
 
-const ClinicType = require('../types/clinicType');
-const clinicInputType = require('../types/clinicInputType');
+const ClinicType = require('../../types/clinicType');
+const clinicInputType = require('../../types/clinicInputType');
 const updateClinicResolver = require('../resolvers/updateClinicResolver');
 
 const updateClinic = {

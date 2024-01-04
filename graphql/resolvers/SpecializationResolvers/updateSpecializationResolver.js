@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const updateSpecializationResolver = async (_, args) => {
     const { id, specialization } = args;

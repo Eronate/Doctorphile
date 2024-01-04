@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const updateClinicResolver = async (_, args) => {
     const { id, clinic } = args;

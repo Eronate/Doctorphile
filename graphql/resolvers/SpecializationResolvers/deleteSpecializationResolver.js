@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const deleteSpecializationResolver = async (_, args) => {
     const { id } = args;

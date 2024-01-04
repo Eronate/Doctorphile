@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const updateUserResolver = async (_, args) => {
     const { id, user } = args;

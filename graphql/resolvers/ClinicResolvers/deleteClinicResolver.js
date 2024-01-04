@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const deleteClinicResolver = async (_, args) => {
     const { id } = args;

@@ -2,9 +2,9 @@ const {
     GraphQLNonNull,
     GraphQLID,
 } = require('graphql');
-const UserType = require('../types/userType');
+const UserType = require('../../types/userType');
 const updateUserResolver = require('../resolvers/updateUserResolver');
-const userInputType = require('../types/userInputType');
+const userInputType = require('../../types/userInputType');
 
 const updateUser = {
     type: UserType,

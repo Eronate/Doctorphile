@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 
 const createStatusResolver = async (_, { status }) => {
     const { title } = status;
