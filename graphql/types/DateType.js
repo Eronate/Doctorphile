@@ -17,3 +17,4 @@ const DateType = new GraphQLScalarType({
     return null
   },
 })
+module.exports = DateType

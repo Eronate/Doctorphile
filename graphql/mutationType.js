@@ -17,6 +17,10 @@ const deleteDoctor = require('./mutations/DoctorMutations/deleteDoctor')
 const createPatient = require('./mutations/PatientMutations/createPatient')
 const updatePatient = require('./mutations/PatientMutations/updatePatient')
 const deletePatient = require('./mutations/PatientMutations/deletePatient')
+const createAppointment = require('./mutations/AppointmentMutations/createAppointment')
+const deleteAppointment = require('./mutations/AppointmentMutations/deleteAppointment')
+const updateAppointment = require('./mutations/AppointmentMutations/updateAppointment')
+
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
@@ -38,6 +42,9 @@ const mutationType = new GraphQLObjectType({
     createPatient: createPatient,
     updatePatient: updatePatient,
     deletePatient: deletePatient,
+    createAppointment: createAppointment,
+    deleteAppointment: deleteAppointment,
+    updateAppointment: updateAppointment,
   },
 })
 

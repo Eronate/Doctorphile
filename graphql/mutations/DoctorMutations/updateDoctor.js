@@ -2,7 +2,7 @@ const { GraphQLNonNull, GraphQLID } = require('graphql')
 
 const DoctorType = require('../../types/doctorType')
 const doctorInputType = require('../../types/InputTypes/doctorInputType')
-const createDoctorResolver = require('../../resolvers/DoctorResolvers/createDoctorResolver')
+const updateDoctorResolver = require('../../resolvers/DoctorResolvers/updateDoctorResolver')
 
 const updateDoctor = {
   type: DoctorType,
@@ -14,7 +14,7 @@ const updateDoctor = {
       type: doctorInputType,
     },
   },
-  resolve: createDoctorResolver,
+  resolve: updateDoctorResolver,
 }
 
 module.exports = updateDoctor
