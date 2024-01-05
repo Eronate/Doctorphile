@@ -16,7 +16,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   Doctor.init(
     {
-      user_id: DataTypes.INTEGER,
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
+        primaryKey: true,
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
       clinic_id: DataTypes.INTEGER,
       specialization_id: DataTypes.INTEGER,
     },

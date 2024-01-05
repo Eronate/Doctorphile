@@ -24,7 +24,7 @@ const specializationQuery = require('./queries/specializations')
 const clinicsQuery = require('./queries/clinics')
 const statusesQuery = require('./queries/statuses')
 const doctorsQuery = require('./queries/doctors')
-
+const patientsQuery = require('./queries/patients')
 const queryType = new GraphQLObjectType({
   name: 'Query',
   fields: {
@@ -33,6 +33,7 @@ const queryType = new GraphQLObjectType({
     clinics: clinicsQuery,
     statuses: statusesQuery,
     doctors: doctorsQuery,
+    patients: patientsQuery
   },
 })
 

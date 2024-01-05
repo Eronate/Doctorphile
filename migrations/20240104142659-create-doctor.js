@@ -6,6 +6,7 @@ module.exports = {
     await queryInterface.createTable('Doctors', {
       user_id: {
         type: Sequelize.INTEGER,
+        primaryKey: true,
         allowNull: false,
         references: {
           model: {
@@ -13,6 +14,8 @@ module.exports = {
           },
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       specialization_id: {
         type: Sequelize.INTEGER,

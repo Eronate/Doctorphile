@@ -13,13 +13,17 @@ const createDoctorResolver = async (_, { doctor }) => {
   } = doctor
   console.log(doctor)
 
-  const newDoctor = await db.Doctor.create({
+  const newUser = await db.User.create({
     first_name,
     last_name,
     password,
     email,
     address,
     gender,
+  })
+
+  const newDoctor = await db.Doctor.create({
+    user_id: newUser.id,
     specialization_id,
     clinic_id,
   })

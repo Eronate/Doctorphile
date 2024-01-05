@@ -7,7 +7,7 @@ const DoctorType = require('../types/userType')
 const doctorsQuery = {
   type: new GraphQLList(DoctorType),
   resolve: (_, args) => {
-    return db.Doctors.findAll()
+    return db.Doctor.findAll()
   },
 }
 

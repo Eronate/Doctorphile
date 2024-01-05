@@ -4,12 +4,19 @@ const {
   GraphQLNonNull,
   GraphQLID,
 } = require('graphql')
-
-const patientType = new GraphQLInputObjectType({
+const UserType = require('./userType')
+const { GraphQLObjectType } = require('graphql/type/definition')
+const patientType = new GraphQLObjectType({
   name: 'PatientType',
   fields: {
     user_id: {
       type: GraphQLID,
+    },
+    user: {
+      type: UserType,
+      resolve: (patient) => {
+        return patient.getUser()
+      },
     },
   },
 })
