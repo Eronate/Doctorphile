@@ -1,7 +1,7 @@
 const db = require('../../../models')
 
 const createPatientResolver = async (_, { patient }) => {
-  const { first_name, last_name, password, email, address, gender } = user
+  const { first_name, last_name, password, email, address, gender } = patient
 
   const newUser = await db.User.create({
     first_name,
