@@ -1,14 +1,17 @@
-const { GraphQLList } = require('graphql')
-
-const db = require('../../models')
-
-const UserType = require('../types/userType')
+const { GraphQLList } = require('graphql');
+const db = require('../../models');
+const UserType = require('../types/userType');
 
 const usersQuery = {
   type: new GraphQLList(UserType),
-  resolve: (_, args) => {
-    return db.User.findAll()
+  resolve: async (_, args) => {
+    try {
+      const users = await db.User.findAll(); 
+      return users;
+    } catch (error) {
+      throw new Error(error);
+    }
   },
-}
+};
 
-module.exports = usersQuery
+module.exports = usersQuery;

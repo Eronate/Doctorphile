@@ -15,22 +15,70 @@ const DoctorType = new GraphQLObjectType({
     user_id: {
       type: new GraphQLNonNull(GraphQLID),
     },
-    user: {
-      type: UserType,
+    // user: {
+    //   type: UserType,
+    //   resolve: (doctor) => {
+    //     return doctor.getUser()
+    //   },
+    // },
+    // specialization: {
+    //   type: SpecializationType,
+    //   resolve: (doctor) => {
+    //     return doctor.getSpecialization()
+    //   },
+    // },
+    // clinic: {
+    //   type: ClinicType,
+    //   resolve: (doctor) => {
+    //     return doctor.getClinic()
+    //   },
+    // },
+    first_name: {
+      type: GraphQLString,
       resolve: (doctor) => {
-        return doctor.getUser()
+        return doctor.getUser().then((user) => user.first_name)
       },
     },
-    specialization: {
-      type: SpecializationType,
+    last_name: {
+      type: GraphQLString,
       resolve: (doctor) => {
-        return doctor.getSpecialization()
+        return doctor.getUser().then((user) => user.last_name)
       },
     },
-    clinic: {
-      type: ClinicType,
+    email: {
+      type: GraphQLString,
       resolve: (doctor) => {
-        return doctor.getClinic()
+        return doctor.getUser().then((user) => user.email)
+      }
+    },
+    address: {
+      type: GraphQLString,
+      resolve: (doctor) => {
+        return doctor.getUser().then((user) => user.address)
+      }
+    },
+    gender: {
+      type: GraphQLString,
+      resolve: (doctor) => {
+        return doctor.getUser().then((user) => user.gender)
+      }
+    },
+    specialization_name: {
+      type: GraphQLString,
+      resolve: (doctor) => {
+        return doctor.getSpecialization().then((specialization) => specialization.name)
+      },
+    },
+    clinic_name: {
+      type: GraphQLString,
+      resolve: (doctor) => {
+        return doctor.getClinic().then((clinic) => clinic.name)
+      },
+    },
+    clinic_address: {
+      type: GraphQLString,
+      resolve: (doctor) => {
+        return doctor.getClinic().then((clinic) => clinic.address)
       },
     },
   }),

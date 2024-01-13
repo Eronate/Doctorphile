@@ -1,5 +1,5 @@
 const db = require('../../../models')
-
+const bcrypt = require('bcrypt')
 const createDoctorResolver = async (_, { doctor }) => {
   const {
     first_name,
@@ -12,11 +12,12 @@ const createDoctorResolver = async (_, { doctor }) => {
     clinic_id,
   } = doctor
   console.log(doctor)
+  const encryptedPass = await bcrypt.hash(password, 10);
 
   const newUser = await db.User.create({
     first_name,
     last_name,
-    password,
+    password: encryptedPass,
     email,
     address,
     gender,

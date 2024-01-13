@@ -10,6 +10,12 @@ const deleteUserResolver = async (_, args) => {
   }
 
   try {
+
+    const associatedDoctor = await db.Doctor.findOne({ where: { user_id: id}})
+    if(associatedDoctor){
+      await associatedDoctor.destroy()
+    }
+
     await targetUser.destroy()
 
     return true
