@@ -8,7 +8,10 @@ const updateUserResolver = async (_, args) => {
   if (!targetUser) {
     return null
   }
-
+  if(user.password) {
+    const encryptedPassword = await bcrypt.hash(user.password, 10); // salt rounds = 10
+    user.password = encryptedPassword
+  }
   const updatedUser = await targetUser.update({
     ...user,
   })

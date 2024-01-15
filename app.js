@@ -1,7 +1,8 @@
 const express = require('express')
 const { createHandler } = require('graphql-http/lib/use/express')
-
+const bcrypt = require('bcrypt');
 const schema = require('./graphql')
+const authMiddleware = require('./config/authMiddleware')
 
 const app = express()
 app.use(express.json())
@@ -10,29 +11,35 @@ const db = require('./models')
 const { JWT_SECRET } = require('./config/constants')
 const jwt = require('jsonwebtoken')
 
-// const checkAuthorization = async (req, res, next) => {
-//   const { authorization } = req.headers;
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
 
-//   if(!authorization) {
-//     next();
-//     return;
-//   }
+  // Find the user by email
+  const user = await db.User.findOne({ where: { email } });
 
-//   const token = authorization.replace('Bearer ', '');
+  if (!user) {
+    return res.status(401).json({ message: 'No user with this email found' });
+  }
 
-//   const data = jwt.verify(token, JWT_SECRET);
+  // Check the password
+  const validPassword = await bcrypt.compare(password, user.password);
 
-//   const user = await db.User.findByPk(data.userId);
+  // const validPassword = password === user.password;
 
-//   if(user) {
-//     req.user = user.dataValues;
-//   }
+  if (!validPassword) {
+    return res.status(401).json({ message: 'Password is incorrect' });
+  }
 
-//   next();
-// }
+  // Create a JWT
+  const token = jwt.sign({ userId: user.id }, JWT_SECRET);
+
+  // Send the token in the response
+  res.json({ token });
+});
 
 app.all(
   '/graphql',
+  authMiddleware,
   createHandler({
     schema,
     context: (req) => {
