@@ -13,17 +13,35 @@ module.exports = {
 
       patient_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Patients',
+          },
+          key: 'user_id',
+        },
       },
 
       doctor_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Doctors',
+          },
+          key: 'user_id',
+        },
       },
 
       status_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Statuses',
+          },
+          key: 'id',
+        },
       },
 
       date: {
