@@ -11,9 +11,9 @@ const loginResolver = async (_, args, context) => {
         }
     });
 
-    // const passwordIsValid = bcrypt.compareSync(password, user.password);
+    const passwordIsValid = bcrypt.compareSync(password, user.password);
 
-    if(password === user.password) {
+    if(passwordIsValid) {
         return {
             token: jwt.sign({ userId: user.id }, JWT_SECRET),
         }

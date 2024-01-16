@@ -1,5 +1,5 @@
 const db = require('../../../models')
-
+const bcrypt = require('bcrypt');
 const updateUserResolver = async (_, args) => {
   const { id, user } = args
 

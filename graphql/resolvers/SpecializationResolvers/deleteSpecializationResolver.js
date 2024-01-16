@@ -10,6 +10,11 @@ const deleteSpecializationResolver = async (_, args) => {
   }
 
   try {
+
+    const associatedDoctor = await db.Doctor.findOne({ where: { specialization_id: id}})
+    if(associatedDoctor){
+      await associatedDoctor.destroy()
+    }
     await targetSpecialization.destroy()
 
     return true

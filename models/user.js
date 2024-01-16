@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.User.hasOne(models.Doctor, { foreignKey: 'user_id' })
-      //models.User.hasOne(models.Patient, { foreignKey: 'user_id' })
+      models.User.hasOne(models.Patient, { foreignKey: 'user_id' })
     }
   }
   User.init(

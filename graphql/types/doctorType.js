@@ -33,6 +33,54 @@ const DoctorType = new GraphQLObjectType({
         return doctor.getClinic()
       },
     },
+    // first_name: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getUser().then((user) => user.first_name)
+    //   },
+    // },
+    // last_name: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getUser().then((user) => user.last_name)
+    //   },
+    // },
+    // email: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getUser().then((user) => user.email)
+    //   }
+    // },
+    // address: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getUser().then((user) => user.address)
+    //   }
+    // },
+    // gender: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getUser().then((user) => user.gender)
+    //   }
+    // },
+    // specialization_name: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getSpecialization().then((specialization) => specialization.name)
+    //   },
+    // },
+    // clinic_name: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getClinic().then((clinic) => clinic.name)
+    //   },
+    // },
+    // clinic_address: {
+    //   type: GraphQLString,
+    //   resolve: (doctor) => {
+    //     return doctor.getClinic().then((clinic) => clinic.address)
+    //   },
+    // },
   }),
 })
 

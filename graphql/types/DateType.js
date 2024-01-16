@@ -1,20 +1,21 @@
-const { GraphQLScalarType } = require('graphql')
-const { Kind } = require('graphql/language')
+const { GraphQLScalarType } = require('graphql');
+const { Kind } = require('graphql/language');
 
 const DateType = new GraphQLScalarType({
   name: 'Date',
   description: 'Date custom scalar type',
   parseValue(value) {
-    return new Date(value) // value from the client
+    return new Date(value); 
   },
   serialize(value) {
-    return value.getTime() // value sent to the client
+    return value.getTime(); 
   },
   parseLiteral(ast) {
-    if (ast.kind === Kind.INT) {
-      return new Date(+ast.value) // ast value is always in string format
+    if (ast.kind === Kind.STRING || ast.kind === Kind.INT) {
+      return new Date(ast.value); 
     }
-    return null
+    return null;
   },
-})
-module.exports = DateType
+});
+
+module.exports = DateType;

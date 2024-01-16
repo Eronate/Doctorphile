@@ -46,7 +46,7 @@ const mutationType = new GraphQLObjectType({
     createAppointment: createAppointment,
     deleteAppointment: deleteAppointment,
     updateAppointment: updateAppointment,
-    login: login
+    login: login,
   },
 })
 

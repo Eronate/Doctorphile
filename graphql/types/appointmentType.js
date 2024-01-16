@@ -4,7 +4,7 @@ const { GraphQLObjectType, GraphQLString, GraphQLID } = require('graphql')
 const UserType = require('./userType');
 const StatusType = require('./statusType');
 const DateType = require('./DateType');
-
+const db = require('../../models')
 
 const AppointmentType = new GraphQLObjectType({
     name: 'Appointment',
@@ -15,13 +15,13 @@ const AppointmentType = new GraphQLObjectType({
         doctor: {
             type: UserType,
             resolve: (appointment) => {
-                return appointment.getDoctor()
+                return db.Doctor.findByPk(appointment.doctor_id)
             },
         },
         patient: {
             type: UserType,
             resolve: (appointment) => {
-                return appointment.getPatient()
+                return db.Patient.findByPk(appointment.patient_id)
             },
         },
         status: {
@@ -33,7 +33,7 @@ const AppointmentType = new GraphQLObjectType({
         date: {
             type: DateType,
             resolve: (appointment) => {
-                return appointment.getDate()
+                return appointment.date
             },
         },
         notes: {
@@ -42,4 +42,4 @@ const AppointmentType = new GraphQLObjectType({
     })
 });
 
-module.exports = UserType;
+module.exports = AppointmentType;
