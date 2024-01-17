@@ -1,3 +1,8 @@
+# Project made by
+<a href="https://github.com/Eronate/Doctorphile/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Eronate/Doctorphile" />
+</a>
+
 # Run the project
 
 ```bash
